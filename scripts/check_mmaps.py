@@ -12,7 +12,7 @@ import re
 prog = re.compile(r"\[(0x[a-z0-9]+)((0x[a-z0-9]+)\)")
 
 for line in sys.stdin:
-    if not "PERF_RECORD_MMAP" in line:
+    if "PERF_RECORD_MMAP" not in line:
         continue
 
     m = prog.search(line)
